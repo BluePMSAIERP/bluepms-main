@@ -1,4 +1,4 @@
-/* app/AboutUs.tsx */
+/* app/AboutUs.tsx     */
 "use client";
 
 import React, { type ReactNode } from "react";
