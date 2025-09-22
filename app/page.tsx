@@ -27,7 +27,7 @@ type HomeProps = {
 
 export default async function Home({ searchParams }: HomeProps) {
   const resolvedSearchParams: PageSearchParams = (await searchParams) ?? {};
-  const headerList = headers();
+  const headerList = await headers();
   const headerCountry = GEO_HEADER_KEYS.map((key) => headerList.get(key)).find(Boolean);
   const showFromHeader = isUae(headerCountry);
 
