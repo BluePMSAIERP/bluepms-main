@@ -21,17 +21,18 @@ const resolveParam = (value: string | string[] | undefined) =>
 const isUae = (value: string | null | undefined) =>
   UAE_IDENTIFIERS.has(normalize(value));
 
-export default function Home({
-  searchParams = {},
+export default async function Home({
+  searchParams,
 }: {
-  searchParams?: PageSearchParams;
+  searchParams?: PageSearchParams | Promise<PageSearchParams>;
 }) {
+  const resolvedSearchParams = (await searchParams) ?? {};
   const headerList = headers();
   const headerCountry = GEO_HEADER_KEYS.map((key) => headerList.get(key)).find(Boolean);
   const showFromHeader = isUae(headerCountry);
 
-  const resolvedRegion = resolveParam(searchParams.region);
-  const resolvedCountry = resolveParam(searchParams.country);
+  const resolvedRegion = resolveParam(resolvedSearchParams.region);
+  const resolvedCountry = resolveParam(resolvedSearchParams.country);
   const showFromParams = isUae(resolvedRegion) || isUae(resolvedCountry);
 
   return <HomeClient showUaeOffer={showFromHeader || showFromParams} />;
