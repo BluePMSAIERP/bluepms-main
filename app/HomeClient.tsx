@@ -92,13 +92,12 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
               transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
               className="mt-6 w-full max-w-3xl rounded-3xl border border-white/30 bg-white/20 p-6 text-left backdrop-blur-xl shadow-[0_12px_40px_rgba(31,38,135,0.25)]"
             >
-              <p className="text-lg font-bold text-[#0D47A1]">Exclusive UAE Introductory Offer</p>
+              <p className="text-lg font-bold text-[#0D47A1]">UAE Exclusive Launch Deal</p>
               <p className="mt-2 text-sm text-black/80">
-                Introductory offer <span className="font-semibold text-black">$2</span> per room per month for Front office and
-                housekeeping.
+                Front Office & Housekeeping: <span className="font-semibold text-black">$2</span>/room/month
               </p>
               <p className="mt-1 text-sm text-black/80">
-                PointOfSale <span className="font-semibold text-black">$50</span> per restaurant per month.
+                Point of Sale: <span className="font-semibold text-black">$50</span>/restaurant/month
               </p>
             </motion.div>
           )}
