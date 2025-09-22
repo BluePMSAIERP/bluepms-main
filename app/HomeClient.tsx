@@ -94,7 +94,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
             >
               <p className="text-lg font-bold text-[#0D47A1]">UAE Exclusive Launch Deal</p>
               <p className="mt-2 text-sm text-black/80">
-                Front Office &amp; Housekeeping: <span className="font-semibold text-black">$2</span>/room/month
+                Front Office & Housekeeping: <span className="font-semibold text-black">$2</span>/room/month
               </p>
               <p className="mt-1 text-sm text-black/80">
                 Point of Sale: <span className="font-semibold text-black">$50</span>/restaurant/month
