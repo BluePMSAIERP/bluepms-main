@@ -27,19 +27,31 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        className="text-[clamp(3rem,8vw,6rem)] font-extrabold tracking-tight relative"
+                        className="relative text-[clamp(3.25rem,8.5vw,6.5rem)] font-black tracking-tight leading-none"
                     >
-                        {/* Gradient base (dark top-to-bottom, slightly lighter start) */}
-                        <span
-                            className="absolute inset-0 select-none
-      bg-gradient-to-b from-[#1B5EC8] via-[#0D47A1] to-[#000814]
-      bg-clip-text text-transparent
-      [text-shadow:0_1px_2px_rgba(0,0,0,0.15)]"
-                        >
-                            BLUEPMS
+                        <span className="relative inline-flex items-center justify-center px-4">
+                            <span
+                                aria-hidden="true"
+                                className="absolute -inset-x-8 -inset-y-6 -z-10 rounded-[3rem] bg-gradient-to-r from-sky-500/25 via-blue-400/10 to-indigo-500/30 blur-3xl"
+                            />
+                            <span className="relative bg-gradient-to-b from-[#B6CCFF] via-white to-[#88A8FF] bg-clip-text text-transparent [text-shadow:0_12px_45px_rgba(15,23,42,0.45)] drop-shadow-[0_8px_24px_rgba(30,64,175,0.35)]">
+                                BLUEPMS
+                            </span>
+                            <span
+                                aria-hidden="true"
+                                className="pointer-events-none absolute inset-0 flex items-center justify-center"
+                            >
+                                <ShinyText
+                                    text="BLUEPMS"
+                                    speed={4}
+                                    className="text-white/80 mix-blend-screen"
+                                />
+                            </span>
+                            <span
+                                aria-hidden="true"
+                                className="absolute inset-x-6 -bottom-5 h-2 rounded-full bg-gradient-to-r from-sky-300/50 via-blue-200/40 to-indigo-300/50 blur-md"
+                            />
                         </span>
-                        {/* Shiny overlay (uses your component) */}
-                        <ShinyText text="BLUEPMS" speed={4} className="relative" />
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0 }}
