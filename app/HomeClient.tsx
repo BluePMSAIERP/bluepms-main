@@ -25,10 +25,10 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
   const goToContact = () => router.push("/contact");
 
   return (
-    <div className="h-screen w-full overflow-y-auto scroll-smooth snap-y snap-mandatory overscroll-y-contain">
+    <div className="min-h-screen md:h-screen w-full overflow-y-auto scroll-smooth md:snap-y md:snap-mandatory md:overscroll-y-contain">
       {/* HERO */}
-      <section className="h-screen snap-start snap-always flex flex-col items-center justify-center text-center px-6">
-        <div className="w-full flex flex-col items-center transform-gpu -translate-y-12 md:-translate-y-20 lg:-translate-y-24">
+      <section className="min-h-screen md:h-screen md:snap-start md:snap-always flex flex-col items-center justify-center text-center px-6 py-16 sm:py-20">
+        <div className="w-full flex flex-col items-center transform-gpu -translate-y-6 sm:-translate-y-10 md:-translate-y-20 lg:-translate-y-24">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.55, ease: "easeOut" }}
-                  className="absolute inset-0"
+                  className="md:absolute md:inset-0"
                 >
                   <AboutUsBoxes immediate />
                 </motion.div>
@@ -133,22 +133,22 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
       </section>
 
       {/* WHY PAGE */}
-      <section id="features" className="h-screen snap-start snap-always flex items-center">
+      <section id="features" className="min-h-screen md:h-screen md:snap-start md:snap-always flex md:items-center py-12 sm:py-16">
         <WhyBluepms />
       </section>
 
       {/* KEY ADVANTAGES PAGE */}
-      <section className="h-screen snap-start snap-always flex items-center">
+      <section className="min-h-screen md:h-screen md:snap-start md:snap-always flex md:items-center py-12 sm:py-16">
         <KeyAdvantages />
       </section>
 
       {/* COMPREHENSIVE MODULES PAGE */}
-      <section className="h-screen snap-start snap-always flex items-center">
+      <section className="min-h-screen md:h-screen md:snap-start md:snap-always flex md:items-center py-12 sm:py-16">
         <ComprehensiveModules />
       </section>
 
       {/* CHOOSE BLUEPMS PAGE */}
-      <section className="h-screen snap-start snap-always flex items-center" id="contact">
+      <section className="min-h-screen md:h-screen md:snap-start md:snap-always flex md:items-center py-12 sm:py-16" id="contact">
         <ChooseBluepms />
       </section>
     </div>
