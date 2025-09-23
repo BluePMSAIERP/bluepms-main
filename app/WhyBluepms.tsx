@@ -30,7 +30,7 @@ export default function WhyBluepms() {
   return (
     <section
       id="features"
-      className="min-h-screen snap-start flex flex-col items-center justify-center px-6 py-20"
+      className="min-h-[100dvh] snap-start flex flex-col items-center justify-center px-6 py-20"
     >
       <motion.h2
         initial={{ opacity: 0, y: 24 }}
