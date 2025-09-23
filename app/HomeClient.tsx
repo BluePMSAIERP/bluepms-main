@@ -25,10 +25,10 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
   const goToContact = () => router.push("/contact");
 
   return (
-    <div className="h-screen w-full overflow-y-auto scroll-smooth snap-y snap-mandatory overscroll-y-contain">
+    <div className="min-h-[100dvh] w-full overflow-y-auto scroll-smooth snap-y snap-mandatory overscroll-y-contain">
       {/* HERO */}
-      <section className="h-screen snap-start snap-always flex flex-col items-center justify-center text-center px-6">
-        <div className="w-full flex flex-col items-center transform-gpu -translate-y-12 md:-translate-y-20 lg:-translate-y-24">
+      <section className="snap-start snap-always flex min-h-[100dvh] w-full flex-col items-center text-center px-6 py-16 sm:py-20 md:py-24 md:justify-center">
+        <div className="w-full max-w-5xl flex flex-col items-center gap-6 transform-gpu md:-translate-y-16 lg:-translate-y-20">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="mt-3 text-[clamp(1.05rem,2.5vw,1.5rem)] font-extrabold text-black"
+            className="mt-3 text-balance text-[clamp(1.05rem,2.5vw,1.5rem)] font-extrabold text-black"
           >
             <span className="font-medium">AI-Driven.</span>{" "}
             <span className="font-medium">Seamless.</span>{" "}
@@ -65,7 +65,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="mt-6 flex flex-col sm:flex-row items-center gap-3"
+            className="mt-4 flex flex-col items-center gap-3 sm:mt-6 sm:flex-row"
             onAnimationComplete={() => setCtaShown(true)}
           >
             <Button
@@ -90,7 +90,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-              className="mt-6 w-full max-w-3xl rounded-3xl border border-white/30 bg-gradient-to-r from-[#0D47A1] via-[#1565C0] to-[#1E88E5] p-6 text-center text-white backdrop-blur-xl shadow-[0_12px_40px_rgba(31,38,135,0.35)]"
+              className="mt-4 w-full max-w-3xl rounded-3xl border border-white/30 bg-gradient-to-r from-[#0D47A1] via-[#1565C0] to-[#1E88E5] p-5 text-center text-white backdrop-blur-xl shadow-[0_12px_40px_rgba(31,38,135,0.35)] sm:mt-6 sm:p-6"
             >
               <p className="text-lg font-bold tracking-wide">UAE Exclusive Launch Deal</p>
               <p className="mt-2 text-sm font-medium">
@@ -107,7 +107,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, delay: 0.55, ease: "easeOut" }}
-            className="mt-4 max-w-3xl text-center text-[clamp(0.95rem,1.6vw,1.15rem)] text-black"
+            className="mt-4 text-balance max-w-3xl text-center text-[clamp(0.95rem,1.6vw,1.15rem)] text-black"
           >
             Transform your hospitality business with a 100% cloud-based,
             AI-integrated property and hotel management platform.
@@ -115,7 +115,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
 
           {/* Reserved space prevents re-centering/jitter */}
           <div className="mt-8 w-full">
-            <div className="relative mx-auto max-w-5xl min-h-[148px] sm:min-h-[156px] md:min-h-[168px]">
+            <div className="relative mx-auto max-w-5xl min-h-[196px] sm:min-h-[156px] md:min-h-[168px]">
               {ctaShown && (
                 <motion.div
                   key="about-boxes"
@@ -133,22 +133,22 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
       </section>
 
       {/* WHY PAGE */}
-      <section id="features" className="h-screen snap-start snap-always flex items-center">
+      <section id="features" className="snap-start snap-always">
         <WhyBluepms />
       </section>
 
       {/* KEY ADVANTAGES PAGE */}
-      <section className="h-screen snap-start snap-always flex items-center">
+      <section className="snap-start snap-always">
         <KeyAdvantages />
       </section>
 
       {/* COMPREHENSIVE MODULES PAGE */}
-      <section className="h-screen snap-start snap-always flex items-center">
+      <section className="snap-start snap-always">
         <ComprehensiveModules />
       </section>
 
       {/* CHOOSE BLUEPMS PAGE */}
-      <section className="h-screen snap-start snap-always flex items-center" id="contact">
+      <section className="snap-start snap-always" id="contact">
         <ChooseBluepms />
       </section>
     </div>
