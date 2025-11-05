@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import {
   Calendar,
@@ -8,6 +9,7 @@ import {
   UtensilsCrossed,
   ShoppingCart,
   Boxes,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -79,6 +81,19 @@ const secondRow: ModuleCard[] = [
       "Real-time stock visibility",
       "AI-driven demand insights",
       "Waste reduction & tighter control",
+    ],
+  },
+];
+
+const thirdRow: ModuleCard[] = [
+  {
+    icon: Sparkles,
+    title: "CRM Experience",
+    points: [
+      "15 dedicated CRM & CX web forms with modern UX",
+      "Command center linking customer, sales, service, & billing",
+      "AI-driven insights embedded across workflows",
+      "Seamless navigation to /crm command center",
     ],
   },
 ];
@@ -181,6 +196,24 @@ export default function ComprehensiveModules() {
                 </li>
               ))}
             </ul>
+            {title === "CRM Experience" && (
+              <Link
+                href="/crm"
+                className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-blue-700"
+              >
+                Launch CRM Command Center
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-4 w-4"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5H21m0 0v7.5m0-7.5L12 13.5M11 5H5.5A1.5 1.5 0 004 6.5v11A1.5 1.5 0 005.5 19h11a1.5 1.5 0 001.5-1.5V12" />
+                </svg>
+              </Link>
+            )}
           </motion.li>
         ))}
       </motion.ul>
@@ -217,6 +250,49 @@ export default function ComprehensiveModules() {
                   className="relative h-7 w-7 text-blue-700"
                   strokeWidth={2}
                 />
+              </div>
+            </div>
+
+            <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+            <ul className="mt-3 space-y-2 text-sm text-gray-800">
+              {points.map((p) => (
+                <li key={p} className="flex gap-2">
+                  <span className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600/80" />
+                  <span className="leading-relaxed">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.li>
+        ))}
+      </motion.ul>
+
+      <motion.ul
+        variants={rowContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        custom={0.45}
+        className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6"
+      >
+        {thirdRow.map(({ icon: Icon, title, points }) => (
+          <motion.li
+            key={title}
+            variants={cardItem}
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{
+              type: "spring",
+              stiffness: 320,
+              damping: 24,
+              mass: 0.6,
+            }}
+            className={`${glassCard} p-6 will-change-transform`}
+          >
+            <div className="mb-5">
+              <div className={glassIconWrap}>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/60 to-transparent opacity-60 " />
+                <div className="absolute inset-0 rounded-full border border-white/50" />
+                <Icon className="relative h-7 w-7 text-blue-700" strokeWidth={2} />
               </div>
             </div>
 
