@@ -114,14 +114,14 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
                     </motion.p>
                     {/* Reserved space prevents re-centering/jitter */}
                     <div className="mt-8 w-full">
-                        <div className="relative mx-auto max-w-5xl min-h-[196px] sm:min-h-[156px] md:min-h-[168px]">
+                        <div className="relative mx-auto max-w-5xl md:min-h-[168px]">
                             {ctaShown && (
                                 <motion.div
                                     key="about-boxes"
                                     initial={{ opacity: 0, y: 12 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.55, ease: "easeOut" }}
-                                    className="absolute inset-0"
+                                    className="relative md:absolute md:inset-0"
                                 >
                                     <AboutUsBoxes immediate />
                                 </motion.div>
