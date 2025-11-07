@@ -6,9 +6,9 @@ export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, phone, email, message } = await req.json();
 
-    if (!name || !email || !message) {
+    if (!name || !phone || !email || !message) {
       return new Response("Missing fields", { status: 400 });
     }
 
@@ -36,6 +36,7 @@ export async function POST(req: NextRequest) {
       <div style="font-family: ui-sans-serif, system-ui; line-height:1.6">
         <h2>Callback request from BLUEPMS site</h2>
         <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+        <p><strong>Phone:</strong> ${escapeHtml(phone)}</p>
         <p><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p><strong>Message:</strong></p>
         <pre style="white-space:pre-wrap">${escapeHtml(message)}</pre>
@@ -48,7 +49,7 @@ export async function POST(req: NextRequest) {
       subject,
       replyTo: email,
       html,
-      text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+      text: `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`,
     });
 
     return new Response("OK", { status: 200 });

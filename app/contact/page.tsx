@@ -31,6 +31,7 @@ const fieldItem: Variants = {
 
 export default function ContactPage() {
   const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [emailTouched, setEmailTouched] = useState(false); // <-- only show error after blur
   const [message, setMessage] = useState("");
@@ -39,27 +40,31 @@ export default function ContactPage() {
 
   // message min length is 1
   const canSubmit = useMemo(
-    () => name.trim().length > 0 && isValidEmail(email) && message.trim().length > 0,
-    [name, email, message]
+    () =>
+      name.trim().length > 0 &&
+      phone.trim().length > 0 &&
+      isValidEmail(email) &&
+      message.trim().length > 0,
+    [name, phone, email, message]
   );
 
   const waHref = useMemo(() => {
     const text = encodeURIComponent(
-      `Hi BLUEPMS,\n\nMy name is ${name}.\nEmail: ${email}\n\nMessage:\n${message}`
+      `Hi BLUEPMS,\n\nMy name is ${name}.\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`
     );
     return `https://wa.me/${WA_NUMBER}?text=${text}`;
-  }, [name, email, message]);
+  }, [name, phone, email, message]);
 
   const onSubmit = async () => {
     if (!canSubmit) return;
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, phone, email, message }),
     });
     if (res.ok) {
       alert("Thanks! We’ll reach out shortly.");
-      setName(""); setEmail(""); setMessage("");
+      setName(""); setPhone(""); setEmail(""); setMessage("");
       setEmailTouched(false);
     } else {
       const t = await res.text();
@@ -148,6 +153,36 @@ export default function ContactPage() {
                   autoComplete="name"
                 />
                 {/* focus halo */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 peer-focus:opacity-100 transition-opacity"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255,255,255,0.45), 0 6px 18px rgba(15,25,35,0.12)",
+                  }}
+                />
+              </div>
+            </motion.label>
+
+            {/* Phone */}
+            <motion.label variants={fieldItem} className="block">
+              <span className="text-sm font-medium text-gray-800">Phone number</span>
+              <div className="relative mt-1">
+                <input
+                  type="tel"
+                  className="
+                    peer relative w-full rounded-2xl
+                    border border-white/25 bg-white/10
+                    px-4 py-3 text-gray-900 placeholder:text-gray-500 outline-none
+                    focus-visible:ring-2 focus-visible:ring-white/60
+                    transition-shadow
+                  "
+                  placeholder="Your phone number"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                  autoComplete="tel"
+                />
                 <span
                   aria-hidden
                   className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 peer-focus:opacity-100 transition-opacity"
