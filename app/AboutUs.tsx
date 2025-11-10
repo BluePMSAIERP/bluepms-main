@@ -108,7 +108,7 @@ export default function AboutUsBoxes({
       <motion.div
         variants={container}
         {...parentMotionProps}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
       >
         {CARDS.map((item, i) => {
           const Icon = item.icon;
@@ -118,10 +118,10 @@ export default function AboutUsBoxes({
               key={item.title}
               variants={variants}
               className="
-                relative rounded-2xl p-5 sm:p-6 h-full
+                relative rounded-2xl p-5 sm:p-6
                 border border-white/50 bg-white/15 backdrop-blur-2xl
                 shadow-[0_10px_40px_rgba(31,38,135,0.14)]
-                flex flex-col items-start gap-4 text-left
+                flex items-start gap-4 text-left
               "
             >
               {/* Liquid-glass icon (same shape, frosted + rim + gloss + subtle caustics) */}

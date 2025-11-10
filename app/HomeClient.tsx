@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import ShinyText from "@/components/ui/ShinyText";
+import WhyBluepms from "@/app/WhyBluepms";
 import KeyAdvantages from "@/app/KeyAdvantages";
 import ComprehensiveModules from "@/app/ComprehensiveModules";
 import ChooseBluepms from "./ChooseBluepms";
@@ -129,8 +130,12 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
                     </div>
                 </div>
             </section>
-            {/* KEY ADVANTAGES PAGE */}
+            {/* WHY PAGE */}
             <section id="features" className="snap-start snap-always min-h-[100dvh]">
+                <WhyBluepms />
+            </section>
+            {/* KEY ADVANTAGES PAGE */}
+            <section className="snap-start snap-always min-h-[100dvh]">
                 <KeyAdvantages />
             </section>
             {/* COMPREHENSIVE MODULES PAGE */}
