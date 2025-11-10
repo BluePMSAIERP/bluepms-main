@@ -8,6 +8,8 @@ import {
   UtensilsCrossed,
   ShoppingCart,
   Boxes,
+  Handshake,
+  Megaphone,
   type LucideIcon,
 } from "lucide-react";
 
@@ -79,6 +81,33 @@ const secondRow: ModuleCard[] = [
       "Real-time stock visibility",
       "AI-driven demand insights",
       "Waste reduction & tighter control",
+    ],
+  },
+];
+
+const thirdRow: ModuleCard[] = [
+  {
+    icon: Handshake,
+    title: "Customer Relationship Management",
+    points: [
+      "Lead management with status filters, search, and guided mobile lead capture",
+      "Opportunity pipeline tracking with stage, probability, and value insights",
+      "Customer profiles with VIP context and structured onboarding workflows",
+      "Interaction tracking for recent touchpoints, sentiment, and quick logging",
+      "Analytics dashboards surfacing summaries, trends, and segmented views",
+    ],
+  },
+  {
+    icon: Megaphone,
+    title: "Sales & Marketing",
+    points: [
+      "Marketing automation oversight for campaign schedules, segments, and metrics",
+      "SEO optimization initiatives driving organic traffic and direct bookings",
+      "PPC advertising management across Google and social promotions",
+      "Email, SMS, and WhatsApp outreach with personalized offers and updates",
+      "Social media marketing with content, influencers, and paid pushes",
+      "Retargeting ads to re-engage visitors with tailored promotions",
+      "Review and reputation management to encourage feedback and responses",
     ],
   },
 ];
@@ -195,6 +224,54 @@ export default function ComprehensiveModules() {
         className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6"
       >
         {secondRow.map(({ icon: Icon, title, points }) => (
+          <motion.li
+            key={title}
+            variants={cardItem}
+            whileHover={{ scale: 1.06 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{
+              type: "spring",
+              stiffness: 320,
+              damping: 24,
+              mass: 0.6,
+            }}
+            className={`${glassCard} p-6 will-change-transform`}
+          >
+            {/* icon */}
+            <div className="mb-5">
+              <div className={glassIconWrap}>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/60 to-transparent opacity-60" />
+                <div className="absolute inset-0 rounded-full border border-white/50" />
+                <Icon
+                  className="relative h-7 w-7 text-blue-700"
+                  strokeWidth={2}
+                />
+              </div>
+            </div>
+
+            <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+            <ul className="mt-3 space-y-2 text-sm text-gray-800">
+              {points.map((p) => (
+                <li key={p} className="flex gap-2">
+                  <span className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600/80" />
+                  <span className="leading-relaxed">{p}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.li>
+        ))}
+      </motion.ul>
+
+      {/* Row 3: final two cards */}
+      <motion.ul
+        variants={rowContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        custom={0.5}
+        className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
+        {thirdRow.map(({ icon: Icon, title, points }) => (
           <motion.li
             key={title}
             variants={cardItem}
