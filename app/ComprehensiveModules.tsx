@@ -45,6 +45,7 @@ const firstRow: ModuleCard[] = [
       "Quick-action shortcuts for billing, KOT reprints, and order transfers",
       "Pending-bill reviews to keep outlets current on open checks",
       "Integrated reporting access across classic, V2, and mobile Dynamic Reports",
+      "Boost customer retention and attraction with smart AI technologies",
       "Landing workflows tuned for instant billing and rapid service recovery",
     ],
   },
@@ -119,6 +120,8 @@ const thirdRow: ModuleCard[] = [
       "Customer profiles with VIP context and structured onboarding workflows",
       "Interaction tracking for recent touchpoints, sentiment, and quick logging",
       "Analytics dashboards surfacing summaries, trends, and segmented views",
+      "Collect feedback via modern methods",
+      "Triage feedback with AI-powered remediation suggestions",
     ],
   },
   {
