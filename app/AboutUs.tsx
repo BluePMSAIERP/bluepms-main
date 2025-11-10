@@ -103,12 +103,12 @@ export default function AboutUsBoxes({
   return (
     <section
       aria-labelledby="about-title"
-      className="relative w-full max-w-6xl mx-auto px-6"
+      className="relative w-full px-6 sm:px-8 lg:px-12 xl:px-16 2xl:px-24"
     >
       <motion.div
         variants={container}
         {...parentMotionProps}
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6"
       >
         {CARDS.map((item, i) => {
           const Icon = item.icon;
@@ -118,10 +118,10 @@ export default function AboutUsBoxes({
               key={item.title}
               variants={variants}
               className="
-                relative rounded-2xl p-5 sm:p-6
+                relative rounded-2xl p-5 sm:p-6 h-full
                 border border-white/50 bg-white/15 backdrop-blur-2xl
                 shadow-[0_10px_40px_rgba(31,38,135,0.14)]
-                flex items-start gap-4 text-left
+                flex flex-col items-start gap-4 text-left
               "
             >
               {/* Liquid-glass icon (same shape, frosted + rim + gloss + subtle caustics) */}
