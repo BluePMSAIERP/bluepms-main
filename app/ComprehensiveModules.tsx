@@ -88,7 +88,7 @@ const secondRow: ModuleCard[] = [
 const thirdRow: ModuleCard[] = [
   {
     icon: Handshake,
-    title: "Customer Relation Management",
+    title: "Customer Relationship Management",
     points: [
       "Lead management with status filters, search, and guided mobile lead capture",
       "Opportunity pipeline tracking with stage, probability, and value insights",
