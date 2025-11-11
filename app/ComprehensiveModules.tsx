@@ -141,7 +141,7 @@ const thirdRow: ModuleCard[] = [
 
 // Glass card + icon styles
 const glassCard =
-  "relative rounded-2xl bg-white/20 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(31,38,135,0.15)] hover:shadow-[0_12px_40px_rgba(31,38,135,0.25)] transition-shadow";
+  "relative rounded-2xl bg-white/20 backdrop-blur-2xl border border-white/40 shadow-[0_8px_32px_rgba(31,38,135,0.15)] hover:shadow-[0_12px_40px_rgba(31,38,135,0.25)] transition-shadow flex flex-col items-center text-center";
 
 const glassIconWrap =
   "relative flex h-14 w-14 items-center justify-center rounded-full bg-white/25 backdrop-blur-xl border border-white/40 shadow-[0_8px_24px_rgba(31,38,135,0.18)] overflow-hidden";
@@ -229,7 +229,7 @@ export default function ComprehensiveModules() {
             </div>
 
             <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-800">
+            <ul className="mt-3 space-y-2 text-sm text-gray-800 text-left w-full">
               {points.map((p) => (
                 <li key={p} className="flex gap-2">
                   <span className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600/80" />
@@ -277,7 +277,7 @@ export default function ComprehensiveModules() {
             </div>
 
             <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-800">
+            <ul className="mt-3 space-y-2 text-sm text-gray-800 text-left w-full">
               {points.map((p) => (
                 <li key={p} className="flex gap-2">
                   <span className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600/80" />
@@ -325,7 +325,7 @@ export default function ComprehensiveModules() {
             </div>
 
             <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-800">
+            <ul className="mt-3 space-y-2 text-sm text-gray-800 text-left w-full">
               {points.map((p) => (
                 <li key={p} className="flex gap-2">
                   <span className="mt-[6px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600/80" />

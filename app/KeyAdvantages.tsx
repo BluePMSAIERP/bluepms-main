@@ -92,7 +92,7 @@ export default function KeyAdvantages() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.2 }}
-        className="mt-10 space-y-6"
+        className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3"
       >
         {advantages.map(({ icon: Icon, title, desc }) => (
           <motion.li
@@ -110,8 +110,8 @@ export default function KeyAdvantages() {
               transition: { duration: 0.08, ease: "easeOut" },
             }}
             className="
-    group relative flex items-start gap-4
-    rounded-2xl px-4 py-3 -mx-2
+    group relative flex flex-col items-center gap-4 text-center
+    rounded-2xl px-6 py-5
     hover:bg-white/10 hover:backdrop-blur-xl hover:border hover:border-white/30
     hover:shadow-[0_12px_36px_rgba(31,38,135,0.18)]
     will-change-transform transform-gpu
@@ -119,7 +119,7 @@ export default function KeyAdvantages() {
   "
           >
             {/* liquid glass icon */}
-            <div className="flex-shrink-0 mt-1">
+            <div className="flex-shrink-0">
               <div
                 className="
         relative flex h-12 w-12 items-center justify-center rounded-full
@@ -141,9 +141,9 @@ export default function KeyAdvantages() {
             </div>
 
             {/* text */}
-            <div>
+            <div className="max-w-xs text-center">
               <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
-              <p className="mt-1 text-gray-700 text-sm leading-relaxed">
+              <p className="mt-1 text-gray-700 text-sm leading-relaxed text-balance">
                 {desc}
               </p>
             </div>
