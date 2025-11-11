@@ -73,7 +73,7 @@ export default function KeyAdvantages() {
   return (
     <section
       id="key-advantages"
-      className="w-full px-6 py-20 max-w-4xl mx-auto min-h-[100dvh]"
+      className="w-full px-6 py-20 max-w-4xl lg:max-w-[90vw] mx-auto min-h-[100dvh]"
       aria-labelledby="key-advantages-title"
     >
       <motion.h2

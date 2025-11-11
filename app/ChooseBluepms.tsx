@@ -69,7 +69,7 @@ export default function ChooseBluepms() {
   return (
     <section
       id="choose-bluepms"
-      className="relative w-full max-w-6xl mx-auto px-6 pt-20 pb-10 min-h-[100dvh] flex flex-col"
+      className="relative w-full max-w-6xl lg:max-w-[90vw] mx-auto px-6 pt-20 pb-10 min-h-[100dvh] flex flex-col"
       aria-labelledby="choose-bluepms-title"
     >
       {/* Split headline */}

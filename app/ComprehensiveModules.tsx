@@ -171,7 +171,7 @@ export default function ComprehensiveModules() {
   return (
     <section
       id="comprehensive-modules"
-      className="w-full px-6 py-20 max-w-6xl mx-auto min-h-[100dvh]"
+      className="w-full px-6 py-20 max-w-6xl lg:max-w-[90vw] mx-auto min-h-[100dvh]"
       aria-labelledby="comprehensive-modules-title"
     >
       <motion.h2
