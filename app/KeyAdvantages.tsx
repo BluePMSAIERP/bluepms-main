@@ -9,6 +9,8 @@ import {
   Rocket,
   Settings2,
   BarChart3,
+  ShieldCheck,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -49,6 +51,16 @@ const advantages: Advantage[] = [
     icon: BarChart3,
     title: "Dynamic Reporting",
     desc: "200+ reports built-in. Generate insights instantly without waiting for vendor patches or fixes.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Automatic Compliance & Security Updates",
+    desc: "BLUEPMS delivers zero-downtime releases that keep you audit-ready, replacing manual patch cycles and risky upgrades.",
+  },
+  {
+    icon: Workflow,
+    title: "Open Integrations",
+    desc: "API-first connectors sync OTAs, payment gateways, and third-party apps—no more siloed data or costly custom builds.",
   },
 ];
 
