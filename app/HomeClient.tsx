@@ -21,7 +21,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
         <div className="min-h-[100dvh] w-full overflow-y-auto scroll-smooth snap-y snap-mandatory overscroll-y-contain">
             {/* HERO */}
             <section className="snap-start snap-always flex min-h-[100dvh] w-full flex-col items-center text-center px-6 py-16 sm:py-20 md:py-24 md:justify-center">
-                <div className="w-full max-w-5xl flex flex-col items-center gap-6 transform-gpu md:-translate-y-16 lg:-translate-y-20">
+                <div className="w-full max-w-5xl lg:max-w-[90vw] flex flex-col items-center gap-6 transform-gpu md:-translate-y-16 lg:-translate-y-20 mx-auto">
                     <motion.h1
                         initial={{ opacity: 0, y: 24 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
                     </motion.p>
                     {/* Reserved space prevents re-centering/jitter */}
                     <div className="mt-8 w-full">
-                        <div className="relative mx-auto max-w-5xl md:min-h-[168px]">
+                        <div className="relative mx-auto max-w-5xl lg:max-w-[90vw] md:min-h-[168px]">
                             {ctaShown && (
                                 <motion.div
                                     key="about-boxes"
