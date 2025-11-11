@@ -121,7 +121,7 @@ export default function AboutUsBoxes({
                 relative rounded-2xl p-5 sm:p-6 h-full
                 border border-white/50 bg-white/15 backdrop-blur-2xl
                 shadow-[0_10px_40px_rgba(31,38,135,0.14)]
-                flex flex-col items-start gap-4 text-left
+                flex flex-col items-center gap-4 text-center
               "
             >
               {/* Liquid-glass icon (same shape, frosted + rim + gloss + subtle caustics) */}
@@ -182,11 +182,11 @@ export default function AboutUsBoxes({
               </div>
 
               {/* Copy */}
-              <div className="min-w-0 text-left">
+              <div className="min-w-0 text-center">
                 <h3 className="text-sm font-bold text-black mb-1.5">
                   {item.title}
                 </h3>
-                <p className="text-[15px] md:text-base leading-relaxed text-black">
+                <p className="text-[15px] md:text-base leading-relaxed text-black text-balance">
                   {item.render()}
                 </p>
               </div>
