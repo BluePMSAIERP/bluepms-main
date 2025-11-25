@@ -105,10 +105,7 @@ const REGIONAL_SERVICE_LIST = [
     "Hotel management software in Kathmandu - Kathmandu",
     "PMS software in Malé - Malé",
 ];
-type HomeClientProps = {
-    showUaeOffer?: boolean;
-};
-export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
+export default function HomeClient() {
     const [ctaShown, setCtaShown] = useState(false);
     const router = useRouter();
     const goToFeatures = () =>
@@ -182,22 +179,6 @@ export default function HomeClient({ showUaeOffer = false }: HomeClientProps) {
                             Go LIVE NOW!
                         </Button>
                     </motion.div>
-                    {showUaeOffer && (
-                        <motion.div
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-                            className="mt-4 w-full max-w-3xl rounded-3xl border border-white/30 bg-gradient-to-r from-[#0D47A1] via-[#1565C0] to-[#1E88E5] p-5 text-center text-white backdrop-blur-xl shadow-[0_12px_40px_rgba(31,38,135,0.35)] sm:mt-6 sm:p-6"
-                        >
-                            <p className="text-lg font-bold tracking-wide">UAE Exclusive Launch Deal</p>
-                            <p className="mt-2 text-sm font-medium">
-                                Front Office &amp; Housekeeping: <span className="font-semibold">$2</span>/room/month
-                            </p>
-                            <p className="mt-1 text-sm font-medium">
-                                Point of Sale: <span className="font-semibold">$50</span>/restaurant/month
-                            </p>
-                        </motion.div>
-                    )}
                     {/* Subheadline */}
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
