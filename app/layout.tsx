@@ -3,6 +3,9 @@ import "./globals.css";
 import { BackgroundGradientAnimation } from "@/components/ui/aurora-background";
 import type { Metadata, Viewport } from "next";
 import { Nunito_Sans } from "next/font/google";
+import Script from "next/script";
+
+const GA_MEASUREMENT_ID = "G-4CKVPB4HLY";
 export const metadata: Metadata = {
   title: "BLUEPMS – AI-Powered Cloud Hotel Management Software",
   description:
@@ -99,6 +102,20 @@ export default function RootLayout({
             {children}
           </div>
         </BackgroundGradientAnimation>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
       </body>
     </html>
   );
