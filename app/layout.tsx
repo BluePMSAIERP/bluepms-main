@@ -4,8 +4,10 @@ import { BackgroundGradientAnimation } from "@/components/ui/aurora-background";
 import type { Metadata, Viewport } from "next";
 import { Nunito_Sans } from "next/font/google";
 import Script from "next/script";
+import { Suspense } from "react";
 
-const GA_MEASUREMENT_ID = "G-4CKVPB4HLY";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
+import { GoogleAnalytics } from "./google-analytics";
 export const metadata: Metadata = {
   title: "BLUEPMS – AI-Powered Cloud Hotel Management Software",
   description:
@@ -116,6 +118,9 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
       </body>
     </html>
   );
