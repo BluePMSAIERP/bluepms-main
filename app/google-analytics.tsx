@@ -14,18 +14,19 @@ declare global {
 export function GoogleAnalytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const searchParamsString = searchParams?.toString();
 
   useEffect(() => {
     if (!pathname) return;
 
-    const url = searchParams?.toString()
-      ? `${pathname}?${searchParams.toString()}`
+    const url = searchParamsString
+      ? `${pathname}?${searchParamsString}`
       : pathname;
 
     window.gtag?.("config", GA_MEASUREMENT_ID, {
       page_path: url,
     });
-  }, [pathname, searchParams]);
+  }, [pathname, searchParamsString]);
 
   return null;
 }
