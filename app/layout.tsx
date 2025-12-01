@@ -5,7 +5,8 @@ import type { Metadata, Viewport } from "next";
 import { Nunito_Sans } from "next/font/google";
 import Script from "next/script";
 
-const GA_MEASUREMENT_ID = "G-4CKVPB4HLY";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics";
+import { GoogleAnalytics } from "./google-analytics";
 export const metadata: Metadata = {
   title: "BLUEPMS – AI-Powered Cloud Hotel Management Software",
   description:
@@ -111,11 +112,9 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
           `}
         </Script>
+        <GoogleAnalytics />
       </body>
     </html>
   );
