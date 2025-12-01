@@ -1,6 +1,7 @@
 /* app/layout.tsx */
 import "./globals.css";
 import { BackgroundGradientAnimation } from "@/components/ui/aurora-background";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata, Viewport } from "next";
 import { Nunito_Sans } from "next/font/google";
 export const metadata: Metadata = {
@@ -99,6 +100,7 @@ export default function RootLayout({
             {children}
           </div>
         </BackgroundGradientAnimation>
+        <GoogleAnalytics gaId="G-4CKVPB4HLY" />
       </body>
     </html>
   );
