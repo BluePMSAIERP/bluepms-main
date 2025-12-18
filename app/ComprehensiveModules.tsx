@@ -58,6 +58,7 @@ const firstRow: ModuleCard[] = [
       "AI-powered complaint triage with remediation suggestions",
       "Robust reporting for operational insights",
       "Fast tagging of rooms dirty/clean, including service-request tracking",
+      "DND & Make-Up Room automation to coordinate staff responses",
       "Maintenance blocking, missing-and-damaged logging, and manual task allocation",
       "Guest audit oversight and communication tracking in one hub",
       "Dynamic Reports (desktop, V2, mobile) to monitor housekeeping performance",
