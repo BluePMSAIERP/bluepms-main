@@ -8,6 +8,8 @@ import { Suspense } from "react";
 
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import { GoogleAnalytics } from "./google-analytics";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: "BLUEPMS – AI-Powered Cloud Hotel Management Software",
   description:
@@ -118,9 +120,35 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Script
+          id="ld-json"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "BLUEPMS",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Cloud",
+              "description": "BLUEPMS is a 100% cloud-based, AI-integrated property management system for hotels.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "description": "Introductory free license available"
+              },
+              "author": {
+                "@type": "Organization",
+                "name": "BluePMS"
+              }
+            })
+          }}
+        />
         <Suspense fallback={null}>
           <GoogleAnalytics />
         </Suspense>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
