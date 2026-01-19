@@ -8,7 +8,7 @@ import { Suspense } from "react";
 
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import { GoogleAnalytics } from "./google-analytics";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata: Metadata = {
   title: "BLUEPMS – AI-Powered Cloud Hotel Management Software",
