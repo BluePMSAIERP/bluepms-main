@@ -177,9 +177,9 @@ export default function HomeClient() {
     };
     const goToContact = () => router.push("/contact");
     return (
-        <div className="h-[100dvh] w-full overflow-y-auto scroll-smooth snap-y snap-mandatory overscroll-y-contain">
+        <div className="h-[100dvh] w-full overflow-y-auto scroll-smooth overscroll-y-contain">
             {/* HERO */}
-            <section className="snap-start snap-always flex min-h-[100dvh] w-full flex-col items-center text-center px-6 py-16 sm:py-20 md:py-24 md:justify-center">
+            <section className="flex min-h-[100dvh] w-full flex-col items-center text-center px-6 py-16 sm:py-20 md:py-24 md:justify-center">
                 <div className="w-full max-w-5xl lg:max-w-[90vw] flex flex-col items-center gap-6 transform-gpu md:-translate-y-16 lg:-translate-y-20 mx-auto">
                     <motion.h1
                         initial={{ opacity: 0, y: 24 }}
@@ -265,20 +265,20 @@ export default function HomeClient() {
                 </div>
             </section>
             {/* KEY ADVANTAGES PAGE */}
-            <section id="features" className="snap-start snap-always min-h-[100dvh]">
+            <section id="features" className="min-h-[100dvh]">
                 <KeyAdvantages />
             </section>
             {/* COMPREHENSIVE MODULES PAGE */}
-            <section className="snap-start snap-always min-h-[100dvh]">
+            <section className="min-h-[100dvh]">
                 <ComprehensiveModules />
             </section>
             {/* CHOOSE BLUEPMS PAGE */}
-            <section className="snap-start snap-always min-h-[100dvh]" id="contact">
+            <section className="min-h-[100dvh]" id="contact">
                 <ChooseBluepms />
             </section>
 
             {/* BROCHURE MODULES GRID (MOVED HERE) */}
-            <section id="modules" className="snap-start snap-always min-h-[100dvh] w-full flex flex-col items-center justify-center p-8">
+            <section id="modules" className="min-h-[100dvh] w-full flex flex-col items-center justify-center p-8">
                 <div className="flex flex-col items-center max-w-7xl mx-auto space-y-12">
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
@@ -330,7 +330,7 @@ export default function HomeClient() {
                 </div>
             </section>
 
-            <section className="snap-start snap-always w-full">
+            <section className="w-full">
                 <Footer />
             </section>
         </div>

@@ -1,6 +1,17 @@
 /* globals.css (or app/globals.css) */
 @import "tailwindcss";
 
+html,
+body {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Keep smooth scrolling on nested overflow containers as well. */
+* {
+  scroll-behavior: smooth;
+}
+
 
 
 /* --- Full-page plasma wrapper --- */
